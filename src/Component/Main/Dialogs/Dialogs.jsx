@@ -48,10 +48,10 @@ const Dialogs = () => {
                 </div>
 
                 <div className={style.dialogsRight}>
-                        <Routes>
+                    <Routes>
                             {routes.map( (route, index) => (
                                 <Route key={index} path={route.path} exact={route.exact} render={() => <DialogMessage text={route.message}/>} />))}
-                        </Routes>
+                    </Routes>
                 </div>
             </div>
     )

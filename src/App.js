@@ -11,22 +11,24 @@ import Feed from "./Component/Main/Feed/Feed";
 import Friends from "./Component/Main/Friends/Friends";
 
 
+
+
 function App() {
   return (
       <BrowserRouter>
-          <div className="wrapper">
-              <Header/>
-              <Main>
-                  <Nav/>
-                  <Routes>
-                      <Route path='/profile' element={<Section/>}/>
-                      <Route exact path='/dialogs/*' element={<Dialogs/>}/>
-                      <Route path='/feed' element={<Feed/>}/>
-                      <Route path='/friends' element={<Friends/>}/>
-                  </Routes>
-              </Main>
-              <Footer/>
-          </div>
+              <div className="wrapper">
+                  <Header/>
+                  <Main>
+                      <Nav/>
+                      <Routes>
+                          <Route path='/profile' element={<Section/>}/>
+                          <Route exact path='/dialogs/*' element={<Dialogs/>}/>
+                          <Route path='/feed' element={<Feed/>}/>
+                          <Route path='/friends' element={<Friends/>}/>
+                      </Routes>
+                  </Main>
+                  <Footer/>
+              </div>
       </BrowserRouter>
   );
 }

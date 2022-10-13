@@ -1,10 +1,13 @@
 import React from "react";
 import style from './section.module.css'
+import Posts from "./Posts/Posts";
 
 const Section = () => {
     return (
         <section>
-            Section
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button>Post</button>
+            <Posts/>
         </section>
     )
 }
