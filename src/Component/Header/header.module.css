@@ -1,0 +1,10 @@
+header{
+    height: 80px;
+    background-color: #faa221;
+    color: #FFFFFF;
+}
+
+.header{
+    text-transform: uppercase;
+    font-weight: 700;
+}

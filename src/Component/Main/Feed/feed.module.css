@@ -1,0 +1,13 @@
+.feed{
+    box-sizing: border-box;
+    width: 70%;
+    background-color: #FFEEB6;
+}
+
+.feedItem{
+    min-height: 40px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #000;
+}

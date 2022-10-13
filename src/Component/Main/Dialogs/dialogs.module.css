@@ -1,0 +1,26 @@
+.dialogs{
+    box-sizing: border-box;
+    padding: 10px 10px 10px 20px;
+    width: 70%;
+    background-color: #2EC4B6;
+    display: flex;
+}
+
+.dialogsLeft{
+    flex: 0 0 30%;
+    margin-right: 20px;
+}
+
+.dialogsRight{
+    flex: 0 0 70%;
+    background-color: #FFFFFF;
+}
+
+.dialogItem{
+    text-transform: capitalize;
+    font-style: italic;
+}
+
+.dialogUser{
+    font-weight: 700;
+}

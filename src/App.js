@@ -24,8 +24,6 @@ function App() {
                       <Route path='/feed' element={<Feed/>}/>
                       <Route path='/friends' element={<Friends/>}/>
                   </Routes>
-                  {/*<Section/>*/}
-                  {/*<Dialogs/>*/}
               </Main>
               <Footer/>
           </div>
