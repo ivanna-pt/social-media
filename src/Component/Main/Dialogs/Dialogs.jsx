@@ -8,18 +8,6 @@ import {
     Link
 } from "react-router-dom";
 
-let users = [
-    {id:1, name: "John", message: 'Hello, dear friend!'},
-    {id:2, name: "Kate", message: 'Hi, how are you?'},
-    {id:3, name: "Travis", message: "What's up?"},
-    {id:4, name: "Peter", message: 'Nice to meet you'},
-    {id:5, name: "Joan", message: 'Hello!'}
-];
-
-const routes = users.map(user => (
-    {path: '/dialogs/' + user.id, exact: true, name: user.name, message: user.message}
-));
-console.log(routes);
 
 const DialogMessage = (props) => {
     return (
@@ -38,9 +26,13 @@ const LinkUser = (props) => {
     )
 }
 
-let usersLink = users.map(link => <LinkUser name={link.name} id={link.id}/>);
 
-const Dialogs = () => {
+
+const Dialogs = (props) => {
+    let usersLink = props.dialogs.map(link => <LinkUser name={link.name} id={link.id}/>);
+    let routes = props.dialogs.map(user => (
+        {path: '/dialogs/' + user.id, exact: true, name: user.name, message: user.message}
+    ));
     return (
             <div className={style.dialogs}>
                 <div className={style.dialogsLeft}>

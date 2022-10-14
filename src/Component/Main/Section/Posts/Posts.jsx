@@ -10,17 +10,9 @@ const Post = (props) => {
     )
 }
 
-let posts = [
-    {id: 1, message: "Some text one", likeCount: 5},
-    {id: 2, message: "Some text two", likeCount: 18},
-    {id: 3, message: "Some text three", likeCount: 0},
-    {id: 4, message: "Some text four", likeCount: 10},
-    {id: 5, message: "Some text five", likeCount: 7},
-]
 
-let postElement = posts.map(post => <Post message={post.message} likes={post.likeCount}/>)
-
-const Posts = () => {
+const Posts = (props) => {
+    let postElement = props.posts.map(post => <Post message={post.message} likes={post.likeCount}/>)
     return (
         <div>
             {postElement}

@@ -13,7 +13,7 @@ import Friends from "./Component/Main/Friends/Friends";
 
 
 
-function App() {
+function App(props) {
   return (
       <BrowserRouter>
               <div className="wrapper">
@@ -21,8 +21,8 @@ function App() {
                   <Main>
                       <Nav/>
                       <Routes>
-                          <Route path='/profile' element={<Section/>}/>
-                          <Route exact path='/dialogs/*' element={<Dialogs/>}/>
+                          <Route path='/profile' element={<Section posts={props.appState.posts} />}/>
+                          <Route exact path='/dialogs/*' element={<Dialogs dialogs={props.appState.users}/>}/>
                           <Route path='/feed' element={<Feed/>}/>
                           <Route path='/friends' element={<Friends/>}/>
                       </Routes>
