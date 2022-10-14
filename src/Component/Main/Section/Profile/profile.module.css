@@ -1,0 +1,33 @@
+.profile{
+    margin-bottom: 20px;
+    padding: 20px;
+    min-height: 150px;
+    background-color: #1a64d6;
+    color: #FFFFFF;
+    display: flex;
+
+}
+
+.profileImg{
+    width: 100px;
+    height: 100px;
+    background-color: #cecece;
+    border-radius: 5px;
+}
+
+.profileUserInfo{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userName{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.userStatus{
+    color: #2EC4B6;
+}

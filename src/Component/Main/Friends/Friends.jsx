@@ -4,7 +4,7 @@ import style from "./friends.module.css";
 const Friends = () => {
     return (
         <div className={style.friends}>
-            <div className={style.friendsItem}></div>
+            <div className={style.friendsItem}>Friends</div>
         </div>
     )
 };

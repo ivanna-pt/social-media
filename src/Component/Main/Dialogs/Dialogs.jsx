@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 
+
 const DialogMessage = (props) => {
     return (
         <div className={style.dialogItem}>
@@ -29,10 +30,11 @@ const LinkUser = (props) => {
 
 
 const Dialogs = (props) => {
-    let usersLink = props.dialogs.map(link => <LinkUser name={link.name} id={link.id}/>);
-    let routes = props.dialogs.map(user => (
+    let usersLink = props.dialogsPage.users.map(link => <LinkUser name={link.name} id={link.id}/>);
+    let routes = props.dialogsPage.users.map(user => (
         {path: '/dialogs/' + user.id, exact: true, name: user.name, message: user.message}
     ));
+
     return (
             <div className={style.dialogs}>
                 <div className={style.dialogsLeft}>
@@ -48,4 +50,6 @@ const Dialogs = (props) => {
             </div>
     )
 }
+
+
 export default Dialogs;

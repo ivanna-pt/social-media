@@ -6,30 +6,27 @@ import Dialogs from "./Component/Main/Dialogs/Dialogs";
 import Section from "./Component/Main/Section/Section";
 import Footer from "./Component/Footer/Footer";
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Feed from "./Component/Main/Feed/Feed";
 import Friends from "./Component/Main/Friends/Friends";
 
-
-
-
 function App(props) {
   return (
-      <BrowserRouter>
+      // <BrowserRouter>
               <div className="wrapper">
                   <Header/>
                   <Main>
                       <Nav/>
                       <Routes>
-                          <Route path='/profile' element={<Section posts={props.appState.posts} />}/>
-                          <Route exact path='/dialogs/*' element={<Dialogs dialogs={props.appState.users}/>}/>
+                          <Route path='/' element={<Section profilePage={props.state.profilePage} store={props.store} dispatch={props.dispatch} />}/>
+                          <Route exact path='/dialogs/*' element={<Dialogs dialogsPage={props.state.dialogsPage}/>}/>
                           <Route path='/feed' element={<Feed/>}/>
                           <Route path='/friends' element={<Friends/>}/>
                       </Routes>
                   </Main>
                   <Footer/>
               </div>
-      </BrowserRouter>
+      // </BrowserRouter>
   );
 }
 
