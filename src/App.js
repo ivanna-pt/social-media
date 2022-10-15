@@ -19,7 +19,7 @@ function App(props) {
                       <Nav/>
                       <Routes>
                           <Route path='/' element={<Section profilePage={props.state.profilePage} store={props.store} dispatch={props.dispatch} />}/>
-                          <Route exact path='/dialogs/*' element={<Dialogs dialogsPage={props.state.dialogsPage}/>}/>
+                          <Route path='/dialogs/*' element={<Dialogs dialogsPage={props.state.dialogsPage}/>}/>
                           <Route path='/feed' element={<Feed/>}/>
                           <Route path='/friends' element={<Friends/>}/>
                       </Routes>

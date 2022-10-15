@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 const LinkUser = (props) => {
-    let path = '/dialogs/' + props.id;
+    let path = "users/" + props.id;
     return (
        <div>
            <NavLink to={path}>{props.name}</NavLink>
@@ -16,6 +16,7 @@ const LinkUser = (props) => {
 }
 
 const DialogMessage = (props) => {
+    console.log(props)
     return (
         <div className={style.dialogItem}>
             {props.text}
@@ -32,31 +33,28 @@ const RouterElement = (props) => {
             {props.arr.map( (route, index) => (
                 // console.log(route)
 
-                // <Route key={index} path={route.path} exact={route.exact} render={() => <DialogMessage text={route.message}/>} />
+                // <Route key={index} path={route.path} render={() => <DialogMessage text={route.message}/>} />
 
-                <Route key={index} path={route.path} exact={route.exact} render={() => {
-                    return (
-                        <div className={style.dialogItem}>
-                            {/*{route.message}*/}
-                            Some text
-                        </div>
-                        );
-                } } />
+                // <Route key={index} path={route.path} exact={route.exact} render={() => {
+                //     return (
+                //         <div className={style.dialogItem}>
+                //             {/*{route.message}*/}
+                //             Some text
+                //         </div>
+                //         );
+                // } } />
 
-                // <Route key={index} path={route.path} exact={route.exact}  element={<DialogMessage text={route.message}/>} />
+                <Route key={index} path={route.path} exact={route.exact}  element={<DialogMessage text={route.message}/>} />
 
                ))}
         </Routes>
-        // <Routes>
-        //     <Route path={props.path} exact={props.exact} element={dialogElement}/>
-        // </Routes>
     )
 }
 
 const Dialogs = (props) => {
     let usersLink = props.dialogsPage.users.map(link => <LinkUser name={link.name} id={link.id}/>);
     let routes = props.dialogsPage.users.map(user => (
-        {path: '/dialogs/' + user.id, exact: true, name: user.name, message: user.message}
+        {path: "users/" + user.id, name: user.name, message: user.message}
     ));
     // console.log(routes);
 
@@ -64,12 +62,18 @@ const Dialogs = (props) => {
             <div className={style.dialogs}>
                 <div className={style.dialogsLeft}>
                     {usersLink}
+
                 </div>
 
 
 
                 <div className={style.dialogsRight}>
                     <RouterElement arr={routes}/>
+
+                    {/*<Routes>*/}
+                    {/*    <Route path='dialogs/1' element={<DialogMessage text='some text'/>}/>*/}
+                    {/*</Routes>*/}
+
 
                     {/*<Routes>*/}
                     {/*    {routes.map( (route, index) => (*/}
